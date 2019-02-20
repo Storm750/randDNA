@@ -1,4 +1,9 @@
-string randDNA (int seed, string bases, int n)
+#include <iostream>
+#include <string>
+#include <random>
+using namespace std;
+
+string randDNA(int seed,string bases,int n)
 {
 	int index = -1; //Variable to store the index of randomly chosen letters. Takes -1 to avoid choosing an index in memory.
 	int min = 0;	//starting index.
@@ -10,9 +15,10 @@ string randDNA (int seed, string bases, int n)
 	
 	for (int i = 0; i < n; i++) //Loop going until limit set by the user for the amount of random sequences to generate.
 	{
-		index = eng1 (seed);
+		index = uni(eng1);
 		letters += bases[index];
 	}
 	
 	return letters;
 }
+
